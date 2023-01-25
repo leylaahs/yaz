@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+@model CreateEmployeeVM
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Name">
+                    <span asp-validation-for="Name"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for="Surname">Surname</label>
+                    <input asp-for="Surname" type="text" class="form-control" placeholder="Surname">
+                    <span asp-validation-for="Surname"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for="Salary">Salary</label>
+                    <input asp-for="Salary" type="text" class="form-control" placeholder="Salary">
+                    <span asp-validation-for="Salary"></span>
+                <div class="form-group">
+                    <label asp-for="Image">Image</label>
+                        <input asp-for="Image" class="form-control">
+                        <span asp-validation-for="Image"></span>
+                </div>
+                <div class="form-group">
+                  <label asp-for="PositionId">Positions</label>
+                        <select asp-for="PositionId" asp-items="@ViewBag.Positions" type="text" class="form-control"></select>
+                        <span asp-validation-for="PositionId"></span>
+                </div>
+                 <div class="form-group">
+                        <label asp-for="TwitterUrl">TwitterUrl</label>
+                        <input asp-for="TwitterUrl" type="text" class="form-control" placeholder="TwitterUrl">
+                        <span asp-validation-for="TwitterUrl"></span>
+                </div>
+                 <div class="form-group">
+                        <label asp-for="InstagramUrl">InstagramUrl</label>
+                        <input asp-for="InstagramUrl" type="text" class="form-control" placeholder="InstagramUrl">
+                        <span asp-validation-for="InstagramUrl"></span>
+                </div>
+                 <div class="form-group">
+                        <label asp-for="FacebookUrl">FacebookUrl</label>
+                        <input asp-for="FacebookUrl" type="text" class="form-control" placeholder="FacebookUrl">
+                        <span asp-validation-for="FacebookUrl"></span>
+                </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <button class="btn btn-light" asp-action="Index" asp-controller="Position">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

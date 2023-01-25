@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<Employee>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Id
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Surname
+                            </th>
+                            <th>
+                                Salary
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Count
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in (Model ?? new List<Employee>()))
+                        {
+                            <tr>
+                                <td>
+                                    @item.Id
+                                </td>
+                                <td>
+                                    <img src="~/assets/img/@item.ImageUrl" />
+                                <td>
+                                        @item.Name
+                                </td>
+                                <td>
+                                        @item.Surname
+                                </td>
+                                <td>
+                                        @item.Position?.Name
+                                </td>
+                                <td>
+                                    <a class="btn btn-dark" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
